@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="page-brand justify-content-center">
+    <span class="brand-mini"><img src="../../../../assets/images/logo.png" /></span>
+  </div>
+  <div class="flexbox flex-1">
+    <!-- START TOP-LEFT TOOLBAR-->
+    <ul class="nav navbar-toolbar">
+      <li class="ed-sider">
+        <a class="nav-link sidebar-toggler" (click)="changeSiderBarMenu()" ><i class="fa fa-bars" aria-hidden="true"></i></a>
+      </li>
+      <li>
+        <a class="nav-link sidebar-toggler-off" (click)="mensLayout()"
+        matTooltip="Cerrar Sesión"
+        matTooltipClass="example-tooltip">
+          <i class="fa fa-power-off" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+    <!-- END TOP-LEFT TOOLBAR-->
+    <!-- START TOP-RIGHT TOOLBAR-->
+    <ul class="nav navbar-toolbar">
+      <li class="dropdown-user">
+        <img src="../../../../assets/images/usuarios/img.jpg" />
+        <span>{{info.nameuser}}</span>
+      </li>
+    </ul>
+    <!-- END TOP-RIGHT TOOLBAR-->
+  </div>
+</header>

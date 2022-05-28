@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div *ngIf="contMenu">
+  <div class="container-fluid">
+    <div class="row" *ngIf="!allSpinner; else loadingSpinner">
+      <app-menu [options]="options" ></app-menu>
+    </div>
+  </div>
+</div>
+<div #content class="content-wrapper">
+  <div class="page-heading">
+    <div class="row pt-3 conf_titulo_contenido_menu">
+      <div class="col">
+        <small class="h6 m-r-10"><i class="fa fa-chevron-right" aria-hidden="true"></i></small>
+        <small class="h6 font-weight-bold">{{nameUbicacionMenu}}</small>
+      </div>
+      <a class="m-r-50 body-vermenu" (click)="verMenu()"
+      matTooltip="{{nameToltip}}"
+      [matTooltipPosition]="position.value"
+      matTooltipClass="example-tooltip">
+        <i class="{{claseVerMenu}}" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <!-- <app-footer></app-footer> -->
+  <!-- <footer #contentFooter class="page-footer">
+    <div><small>2020 ©  [ Sistema WEB ]</small><small class="font-weight-bold"> - Hecho por Jonathan Maza.</small></div>
+    <div class="to-top"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></div>
+  </footer> -->
+</div>
+<!-- <app-loading></app-loading> -->
+
+<!-- Sidebar  Menu -->
+<aside #menuData class="sidebar-menu trans-0-5">
+  <div class="page-wrapper container-fluid">
+    <div class="row" *ngIf="!allSpinner; else loadingSpinner">
+      <app-menusider [options]="options" ></app-menusider>
+    </div>
+  </div>
+</aside>
+
+<ng-template #loadingSpinner>
+  <div class="row">
+    <div class="spinnerLoading-body alternate-green">
+      <mat-spinner [diameter]="30" color="primary"></mat-spinner>
+      <span>Cargando...</span>
+    </div>
+  </div>
+</ng-template>
+
+<div *ngIf="overFijo" #overlayfijo class="overlay-sidebar trans-0-4"></div>
+<div *ngIf="overNormal" #overlay class="overlay-sidebar trans-0-4" (click)="ocultarSiderBar()"></div>

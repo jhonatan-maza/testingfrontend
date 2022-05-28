@@ -1,0 +1,764 @@
+@mixin flexbox($jusCon,$aligIte) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $jusCon;
+  align-items: $aligIte;
+}
+
+@mixin flexbox2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin wrap_header($jusCon,$aligIte) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  justify-content: $jusCon;
+  align-items: $aligIte;
+}
+
+@mixin menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin sidebar($width,$bgcolor) {
+  position: fixed;
+  z-index: 1200;
+  width: $width;
+  height: 100%;
+  overflow: auto;
+  background-color: $bgcolor;
+  top: 0;
+}
+
+@mixin sidebar2($width,$height,$bgcolor) {
+  position: fixed;
+  z-index: 1200;
+  width: $width;
+  height: $height;
+  overflow: auto;
+  background-color: $bgcolor;
+  top: 0;
+}
+
+@mixin sidebar3($width,$bgcolor) {
+  position: fixed;
+  z-index: 1200;
+  width: $width;
+  // height: $height;
+  overflow: auto;
+  background-color: $bgcolor;
+  top: 0;
+}
+
+@mixin btn_hide_sidebar($top,$right) {
+  position: absolute;
+  font-size: 20px;
+  color: #111111;
+  padding: 10px;
+  top: $top;
+  right: $right;
+}
+
+@mixin bordeRedondeado1 {
+  // border: 1px solid #000000;
+  -moz-border-radius: 15px;
+  -webkit-border-radius:15px;
+  padding: 10px;
+}
+
+@mixin bordeRedondeado2 {
+  border: 1px solid $color265;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 10px;
+}
+
+@mixin bordeRedondeado3 {
+  border: 2px solid $color238;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 10px;
+  border-radius: 24px;
+}
+
+@mixin bordeRedondeado4 {
+  // border: 2px solid $color238;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+@mixin bordeRedondeado5 {
+  // border: 2px solid $color238;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@mixin bordeRedondeado6 {
+  // border: 0px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 3px;
+  border-radius: 40px;
+}
+
+@mixin bordeRedondeado7 {
+  // border: 2px solid $color238;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  padding: 10px;
+  border-radius: 150px;
+}
+
+@mixin bordeBuscarArticulo {
+  border: 0;
+  background: $color227;
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+  border: 2px solid $color240;
+  padding: 10px 5px;
+  outline: none;
+  color: $color262;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+// @mixin bordeRedondeado8 {
+//   // border: 2px solid $color238;
+//   -moz-border-radius: 50px;
+//   -webkit-border-radius: 50px;
+//   padding: 10px;
+//   border-radius: 700px;
+// }
+
+@mixin texto1 {
+  text-align: center;
+  font-family: Montserrat-Bold;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+@mixin texto2 {
+  text-align: center;
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+@mixin texto3 {
+  text-align: center;
+  font-family: Poppins-bold;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+@mixin texto4 {
+  text-align: center;
+  font-family: Poppins-Medium;
+  font-weight: 500;
+  font-size: 14px;
+  // text-transform: capitalize;
+}
+
+@mixin texto5 {
+  text-align: left;
+  font-family: Courgette-Regular;
+  font-weight: 550;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+@mixin texto6 {
+  text-align: center;
+  font-family: Montserrat-Regular;
+  font-weight: 400;
+  // font-size: 12px;
+  font-size:1vw;
+}
+
+@mixin texto7 {
+  text-align: center;
+  font-family: Poppins-Regular;
+  font-weight: 400;
+  // font-size: 14px;
+  font-size:1vw;
+  // text-transform: capitalize;
+}
+
+@mixin cabecera-busq-articulo {
+  position: absolute;
+  width: 100%;
+  height: 55px;
+  z-index: 250;
+  margin-top: 55px;
+  @include degraded0;
+  @include flexbox(flex-start,flex-start);
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+
+  & div div div {
+    @include flexbox(flex-start,center);
+    justify-content:space-between;
+    height: 48px;
+    width: 70%;
+    moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    border: solid 2px $color240;
+    background-color: $color274;
+    & input[type="text"] {
+      border: none;
+      background: none;
+      outline: none;
+      float: left;
+      padding: 0;
+      width: 90%;
+      @include header_font1;
+    }
+
+    & a {
+      width: 40px;
+      height: 40px;
+      -moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      padding: 9px 7px 7px 12px;
+      margin-right: 2px;
+      float: left;
+      border: solid 2px $color239;
+      background-color: $color240;
+      color: $color274;
+    }
+    &:hover > a {
+      border: solid 2px $color240;
+      background-color: $color274;
+      color: $color240;
+      transition: 1s;
+    }
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+
+@mixin wrap-menu-header {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 110px;
+  /* left: 0; */
+  z-index: 100;
+  /* border-top: 5px solid #ec1d25; */
+  @media screen and (max-width: 991px) {
+    top: 55px;
+  }
+}
+
+@mixin buttonpedido($color,$bg) {
+  height: 20px;
+  width: 20px;
+  background-color: $bg;
+  color: $color;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  padding: 1px 2px 4px 2px;
+  border-radius: 40px;
+  margin: 1px;
+}
+
+@mixin mini-bar {
+  @include flexbox(center,center);
+  width: 100%;
+  .nameCate {
+    width: 30%;
+  }
+  .contenedor {
+    @include flexbox(flex-start,center);
+    height: 55px;
+    width: 70%;
+    position: relative;
+
+    .cont {
+      @include flexbox(flex-start,center);
+      justify-content: space-around;
+      height: 48px;
+      moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      transition: 1s;
+      & input[type="text"] {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        width: 0px;
+        @include header_font1;
+        transition: 0.5s;
+      }
+      // & a {
+      //   width: 40px;
+      //   height: 40px;
+      //   -moz-border-radius: 20px;
+      //   -webkit-border-radius: 20px;
+      //   border-radius: 20px;
+      //   padding: 10px;
+      //   float: left;
+      //   border: solid 2px $color239;
+      //   background-color: $color240;
+      //   color: $color274;
+      // }
+      &:hover {
+        border: solid 2px $color240;
+        background-color: $color274;
+        width: 100%;
+        transition: 1s;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+      }
+      &:hover > input[type="text"] {
+        width: 80%;
+        transition: 1s;
+      }
+      // &:hover > a {
+      //   background-color: $color240;
+      // }
+      & a {
+        width: 40px;
+        height: 40px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        padding: 9px 9px 9px 9px;
+        margin-right: 2px;
+        float: left;
+        border: solid 2px $color239;
+        background-color: $color240;
+        color: $color274;
+      }
+      &:hover > a {
+        border: solid 2px $color240;
+        background-color: $color274;
+        color: $color240;
+        transition: 1s;
+      }
+    }
+  }
+}
+
+@mixin mini-bar-up {
+  @include flexbox(center,center);
+  width: 100%;
+  .nameCate {
+    width: 30%;
+  }
+  .contenedor {
+    @include flexbox(flex-start,center);
+    height: 55px;
+    width: 70%;
+    position: relative;
+
+    .cont {
+      @include flexbox(flex-start,center);
+      justify-content: space-around;
+      height: 48px;
+      moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      border: solid 2px $color240; /*por este cambio ya no utilizo el hover*/
+      background-color: $color274; /*por este cambio ya no utilizo el hover*/
+      width: 100%; /*por este cambio ya no utilizo el hover*/
+      transition: 1s;
+
+      & input[type="text"] {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        width: 80%; /*por este cambio ya no utilizo el hover*/
+        @include header_font1;
+        transition: 0.5s;
+      }
+      // & a {
+      //   width: 40px;
+      //   height: 40px;
+      //   -moz-border-radius: 20px;
+      //   -webkit-border-radius: 20px;
+      //   border-radius: 20px;
+      //   padding: 10px;
+      //   float: left;
+      //   border: solid 2px $color239;
+      //   background-color: $color240;
+      //   color: $color274;
+      // }
+      &:hover {
+        border: solid 2px $color240;
+        background-color: $color274;
+        width: 100%;
+        transition: 1s;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+      }
+      // &:hover > input[type="text"] {
+      //   width: 80%;
+      //   transition: 1s;
+      // }
+      // &:hover > a {
+      //   background-color: $color240;
+      // }
+
+      & a {
+        width: 40px;
+        height: 40px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        padding: 9px 9px 9px 9px;
+        margin-right: 2px;
+        float: left;
+        border: solid 2px $color239;
+        background-color: $color240;
+        color: $color274;
+      }
+      &:hover > a {
+        border: solid 2px $color240;
+        background-color: $color274;
+        color: $color240;
+        transition: 1s;
+      }
+    }
+  }
+}
+
+@mixin carritoCompras() { /*sider*/
+  width: 100%;
+  .card-imagen {
+    & > img {
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      // padding: 10px;
+      border-radius: 50%;
+      width: 100%;
+
+    }
+  }
+
+  .cardCarrito {
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    padding: 45px;
+    border-radius: 200px;
+    background-color: $color2;
+    border: 3px solid $color240;
+    width: 60%;
+    margin: 10px;
+    &:hover {
+        border-color: $color239;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  .rowCarrito {
+    @include flexbox(center,center);
+    flex-direction: row;
+    align-self: center;
+
+    .rowCantidades {
+      @include flexbox(space-between,center);
+      flex-flow: nowrap;
+      // @include bordeRedondeado4;
+      // background-color: $color166;
+      width: 100%;
+      margin-left: -70px;
+
+      .btnControls {
+        @include flexbox2();
+        flex-direction: column;
+      }
+
+      .btnCarIncrement-Decrement {
+        background-color: $color166;
+        @include bordeRedondeado3;
+        height: 30px;
+        width: 30px;
+        border-style: none;
+        @include flexbox(center,center);
+        color: $color274;
+      }
+
+      .inpCarCant {
+        @include texto2;
+        @include bordeRedondeado3;
+        width: 49px;
+        text-align: center;
+        background: $color274;
+        display: block;
+        // margin: 2px auto;
+        outline: none;
+        transition: 0.25s;
+        &:hover {
+          border-color: $color239;
+        }
+      }
+    }
+
+    .btnCarClose {
+      @include flexbox(center,center);
+      width: 25px;
+      height: 25px;
+      &>button {
+        color: $color15;
+      }
+    }
+
+    .imagen {
+      // margin-left: -10px;
+      margin-top: -25px;
+      z-index: 300px;
+      @include flexbox(center,center);
+      flex-direction: column;
+      &>img {
+        // height: 90%;
+        height: 80px;
+        width: 80px;
+        @include bordeRedondeado6;
+        border: 2px solid $color175;
+      }
+    }
+  }
+
+}
+
+@mixin carritoComprasLarge() { /*pantalla completa*/
+  width: 100%;
+  .card-imagen {
+    & > img {
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      // padding: 10px;
+      border-radius: 50%;
+      width: 100%;
+
+    }
+  }
+
+  .cardCarrito {
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    padding: 10px;
+    border-radius: 200px;
+    background-color: $color2;
+    border: 4px solid $color176;
+    width: 100%;
+    // margin: 3px;
+    &:hover {
+        border-color: $color166;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  .rowCarrito {
+    @include flexbox(center,center);
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-self: center;
+
+    .rowCantidades {
+      @include flexbox(space-between,center);
+      flex-flow: nowrap;
+      // @include bordeRedondeado4;
+      // background-color: $color240;
+      width: 100%;
+      margin-left: -60px;
+
+      .btnControls {
+        @include flexbox2();
+        flex-direction: column;
+      }
+
+      .btnCarIncrement-Decrement {
+        margin-left: -60px;
+        background-color: $color166;
+        @include bordeRedondeado3;
+        height: 30px;
+        width: 30px;
+        border-style: none;
+        @include flexbox(center,center);
+        color: $color274;
+      }
+
+      .inpCarCant {
+        z-index: 20;
+        @include texto2;
+        @include bordeRedondeado3;
+        width: 49px;
+        text-align: center;
+        background: $color274;
+        display: block;
+        // margin: 2px auto;
+        outline: none;
+        transition: 0.25s;
+        &:hover {
+          border-color: $color239;
+        }
+      }
+    }
+
+    .btnCarClose {
+      @include flexbox(center,center);
+      width: 25px;
+      height: 25px;
+      &>button {
+        color: $color15;
+      }
+    }
+
+    .imagen {
+      margin-left: -70px;
+      margin-top: -25px;
+      z-index: 300px;
+      @include flexbox(center,center);
+      flex-direction: column;
+      &>img {
+        // height: 90%;
+        height: 80px;
+        width: 80px;
+        @include bordeRedondeado6;
+        border: 2px solid $color175;
+      }
+    }
+  }
+
+}
+
+@mixin btncantidades() {
+  border-top: 2px solid $color176;
+  background-color: $color166;
+  text-align: center;
+  @include bordeRedondeado6;
+  @include flexbox(center,center);
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  & span {
+    @include texto1;
+    text-transform: lowercase;
+    color: $color261;
+  }
+  & div button {
+    @include buttonpedido($color274,$color146)
+  }
+  & button {
+    @include buttonpedido($color274,$color15)
+  }
+}
+
+
+@mixin sidebar-modal($marginleft,$height,$marTop,$md-martop,$sm-martop,$md-alto,$sm-alto) {
+  border: 5px solid $color274;
+  @include flexbox(center,center);
+  @include sidebar(50%,$color240);
+  top: -100%;
+  height: $height;
+  margin-top: $marTop;
+  margin-left: $marginleft;
+  padding: 10px;
+  & .btn-close-modal {
+    background-color: $color274;
+    color: $color15;
+  }
+  @media screen and (max-width: 992px) {
+    width: 50%;
+    margin-left: 23%
+  }
+  @media screen and (max-width: 768px) {
+    margin-top: $md-martop;
+    height: $md-alto;
+    width: 70%;
+    margin-left: 10%
+  }
+  @media screen and (max-width: 576px) {
+    margin-top: $sm-martop;
+    height: $sm-alto;
+    width: 90%;
+    margin-left: 2%
+  }
+}
+
+@mixin sidebar-modal-data($ancho,$alto,$marTop,$marLeft) {
+  border: 5px solid $color274;
+  @include flexbox(center,center);
+  @include sidebar($ancho,$color240);
+  top: -100%;
+  height: $alto;
+  margin-top: $marTop;
+  margin-left: $marLeft;
+  padding: 10px;
+  & .btn-close-modal {
+    background-color: $color274;
+    color: $color15;
+  }
+}
+@mixin sidebar-modal-data-large($ancho,$marLeft) {
+  @media screen and (max-width: 992px) {
+    width: $ancho;
+    margin-left: $marLeft;
+  }
+}
+
+
+@mixin footer() {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #1A0000;
+}

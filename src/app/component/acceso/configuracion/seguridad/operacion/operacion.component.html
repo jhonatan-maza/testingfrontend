@@ -1,0 +1,153 @@
+<div class="page-content fade-in-up">
+  <div class="ibox">
+    <div class="ibox-head">
+      <div class="ibox-title">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <h5 class="h5-responsive pt-3">
+              <small class="font-weight-bold">OPERACIÓN</small>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="alternate-green" (click)="openModal()">
+            <mat-icon color="primary">add_circle</mat-icon>
+            <span>Agregar Operación</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+    <div class="ibox-body">
+      <div class="container-fluid">
+        <form [formGroup]="FormBusqueda" class="form-horizontal" onsubmit="return false;">
+          <div class="row align-items-center">
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+              <div class="form-group small">
+                <mat-form-field floatLabel="auto" appearance="outline" color="primary" class="w-100">
+                  <mat-label>OPERACIÓN</mat-label>
+                  <input matInput type="text" formControlName="textName" (keyup)="doFilter($event.target.value)" />
+                  <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <ng-select (change)="ListarOperacion()"
+                appearance="outline" [searchable]="false" [clearable]="false"
+                formControlName="cboBusqEstado">
+                    <ng-option value="A">
+                        <span class="badge badge-pill badge-primary m-t-10">ACTIVO</span>
+                    </ng-option>
+                    <ng-option value="I">
+                        <span class="badge badge-pill badge-danger m-t-5">INACTIVO</span>
+                    </ng-option>
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div #rowLoading class="row displayData">
+        <div class="col-12">
+          <div class="spinnerLoading alternate-green">
+            <mat-spinner [diameter]="50" color="primary"></mat-spinner>
+            <span>Cargando...</span>
+          </div>
+        </div>
+      </div>
+      <div #rowData class="row">
+        <div class="col-12 table-responsive table-container">
+
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort class="table-sm">
+
+              <ng-container matColumnDef="acciones">
+                <th mat-header-cell class="thAcciones" *matHeaderCellDef> ACCIONES </th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button  matTooltip="Editar" matTooltipClass="example-tooltip-green" (click)="editarModulo(element.idoperacion)">
+                    <mat-icon class="ico-pri">library_books</mat-icon>
+                  </button>
+                  <button class="alternate-green" *ngIf="element.estado==='A'; else estadoInactivo" (click)="cambiarEstado(element.idoperacion,'I')" matTooltip="Activado" matTooltipClass="example-tooltip-green"
+                  mat-icon-button >
+                    <mat-icon class="ico-sec">check_circle</mat-icon>
+                  </button>
+                  <ng-template #estadoInactivo>
+                    <button mat-icon-button (click)="cambiarEstado(element.idoperacion,'A')" matTooltip="Inactivado" matTooltipClass="example-tooltip-green">
+                      <mat-icon class="ico-ter">cancel</mat-icon>
+                    </button>
+                  </ng-template>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="idoperacion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> CÓDIGO </th>
+                <td mat-cell *matCellDef="let element"> {{element.idoperacion}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="descoperacion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIPCIÓN </th>
+                <td mat-cell *matCellDef="let element"> {{element.descoperacion}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #PAGINATOR_OPERACION [pageSize]="10" [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<aside #modalRegistros class="sidebar-modal-operacion trans-1-0">
+  <mat-icon class="btn-close-modal" (click)="closeModal()">clear</mat-icon>
+  <div class="modal-content">
+    <form [formGroup]="FormModal" (ngSubmit)="grabarData()">
+
+      <div class="modal-header">
+        <h2 class="modal-title"><span class="badge badge-warning titlemodal">{{titleModal}}</span></h2>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <div class="row data-modal">
+              <div class="col-12 codigoModal" *ngIf="codigoModal">
+                <span class="badge p-2 bg-success text-white">CÓDIGO : <small>{{FormModal.controls.cntrlMantIdOperacion.value}}</small></span>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-12">
+                <div class="form-group small" [ngClass]="{'has-error' : FormModal.get('cntrlMantDescOperacion').errors &&
+                (FormModal.get('cntrlMantDescOperacion').touched || FormModal.get('cntrlMantDescOperacion').dirty)}" >
+                  <mat-form-field floatLabel="never" appearance="outline" color="primary" class="w-100">
+                    <mat-label>DESCRIPCIÓN</mat-label>
+                    <input matInput type="text" formControlName="cntrlMantDescOperacion" class="text-uppercase" />
+                    <mat-hint align="end">
+                      <span class="help-block" *ngIf="FormModal.get('cntrlMantDescOperacion').errors &&
+                      (FormModal.get('cntrlMantDescOperacion').touched || FormModal.get('cntrlMantDescOperacion').dirty)" >
+                        <span *ngIf="FormModal.get('cntrlMantDescOperacion').errors.required">Campo requerido</span>
+                        <span *ngIf="FormModal.get('cntrlMantDescOperacion').errors.pattern">Solo se permiten letras</span>
+                      </span>
+                    </mat-hint>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" [disabled]="FormModal.invalid"
+         mat-raised-button color="warn" data-style="zoom-in" data-spinner-size="30">GRABAR <mat-icon>save</mat-icon></button>
+      </div>
+
+    </form>
+  </div>
+</aside>

@@ -1,0 +1,33 @@
+<!-- <div *ngIf="isLoggedIn; else loggedOut">
+  Logged in as {{roles}}
+</div>
+<ng-template #loggedOut>
+
+</ng-template> -->
+
+
+<div class="bgImgUser">
+  <div class="centerDivUser">
+    <img src="./../../../assets/images/user.png">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="contenedorLogeo">
+        <input type="text" placeholder="Usuario" name="username" [(ngModel)]="form.username" #username="ngModel" required="" >
+        <div *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Usuario es requerido</div>
+        </div>
+      </div>
+      <div class="contenedorLogeo">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="form.password" #password="ngModel" required="">
+        <div *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Password es requerido</div>
+        </div>
+      </div>
+      <div class="contenedorLogeo">
+        <input type="submit" value="Login" name="btnlogin">
+        <!-- <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+          Logeo fallido: {{errorMessage}}
+        </div> -->
+      </div>
+    </form>
+  </div>
+</div>

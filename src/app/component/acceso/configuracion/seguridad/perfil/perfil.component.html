@@ -1,0 +1,197 @@
+<div class="page-content fade-in-up">
+  <div class="ibox">
+    <div class="ibox-head">
+      <div class="ibox-title">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <h5 class="h5-responsive pt-3">
+              <small class="font-weight-bold">PERFIL</small>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="alternate-green" (click)="openModal()">
+            <mat-icon color="primary">add_circle</mat-icon>
+            <span>Agregar Perfil</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+    <div class="ibox-body">
+      <div class="container-fluid">
+        <form [formGroup]="FormBusqueda" class="form-horizontal" onsubmit="return false;">
+          <div class="row align-items-center">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group small">
+                <mat-form-field floatLabel="auto" appearance="outline" color="primary" class="w-100">
+                  <mat-label>PERFIL</mat-label>
+                  <input matInput type="text" formControlName="textName" (keyup)="doFilter($event.target.value)" />
+                  <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <ng-select (change)="ListarPerfil()" appearance="outline"
+                           formControlName="cboBusqNivel" [clearable]="true" [items]="busqNivel$ | async"
+                           bindLabel="descnivel"
+                           bindValue="idnivel"
+                           placeholder="Nivel">
+                </ng-select>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="form-group">
+                <ng-select (change)="ListarPerfil()"
+                appearance="outline" [searchable]="false" [clearable]="false"
+                formControlName="cboBusqEstado">
+                    <ng-option value="A">
+                        <span class="badge badge-pill badge-primary">ACTIVO</span>
+                    </ng-option>
+                    <ng-option value="I">
+                        <span class="badge badge-pill badge-danger">INACTIVO</span>
+                    </ng-option>
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div #rowLoading class="row displayData">
+        <div class="col-12">
+          <div class="spinnerLoading alternate-green">
+            <mat-spinner [diameter]="50" color="primary"></mat-spinner>
+            <span>Cargando...</span>
+          </div>
+        </div>
+      </div>
+      <div #rowData class="row">
+        <div class="col-12 table-responsive table-container">
+
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort class="table-sm">
+
+              <ng-container matColumnDef="acciones">
+                <th mat-header-cell class="thAcciones" *matHeaderCellDef> ACCIONES </th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button  matTooltip="Editar" matTooltipClass="example-tooltip-green" (click)="editarModulo(element.idperfil)">
+                    <mat-icon class="ico-pri">library_books</mat-icon>
+                  </button>
+                  <button class="alternate-green" *ngIf="element.estado==='A'; else estadoInactivo" (click)="cambiarEstado(element.idperfil,'I')" matTooltip="Activado" matTooltipClass="example-tooltip-green"
+                  mat-icon-button >
+                    <mat-icon class="ico-sec">check_circle</mat-icon>
+                  </button>
+                  <ng-template #estadoInactivo>
+                    <button mat-icon-button (click)="cambiarEstado(element.idperfil,'A')" matTooltip="Inactivado" matTooltipClass="example-tooltip-green">
+                      <mat-icon class="ico-ter">cancel</mat-icon>
+                    </button>
+                  </ng-template>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="idperfil">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> CÓDIGO </th>
+                <td mat-cell *matCellDef="let element"> {{element.idperfil}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="descperfil">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIPCIÓN </th>
+                <td mat-cell *matCellDef="let element"> {{element.descperfil}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="descnivel">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> NIVEL </th>
+                <td mat-cell *matCellDef="let element"> {{element.nivel.descnivel}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="usuariosact">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> USUARIOS ACTIVOS </th>
+                <td mat-cell *matCellDef="let element"> {{element.usuariosact}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="usuariosinact">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> USUARIOS INACTIVOS </th>
+                <td mat-cell *matCellDef="let element"> {{element.usuariosinact}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #PAGINATOR_PERFIL [pageSize]="10" [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<aside #modalRegistros class="sidebar-modal-perfil trans-1-0">
+  <mat-icon class="btn-close-modal" (click)="closeModal()">clear</mat-icon>
+  <div class="modal-content">
+    <form [formGroup]="FormModal" (ngSubmit)="grabarData()">
+
+      <div class="modal-header">
+        <h2 class="modal-title"><span class="badge badge-warning titlemodal">{{titleModal}}</span></h2>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <div class="row data-modal">
+              <div class="col-12 codigoModal" *ngIf="codigoModal">
+                <span class="badge p-2 bg-success text-white">CÓDIGO : <small>{{FormModal.controls.cntrlMantIdPerfil.value}}</small></span>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 mb-2">
+                <span class="badge p-2 bg-primary text-white">NIVEL</span>
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 mb-2">
+                <div class="md-form" [ngClass]="{'has-error' : FormModal.get('cntrlMantNivel').errors &&
+                (FormModal.get('cntrlMantNivel').touched || FormModal.get('cntrlMantNivel').dirty)}">
+                  <ng-select appearance="outline" formControlName="cntrlMantNivel" [clearable]="false" [items]="mantNivel$ | async"
+                             bindLabel="descnivel"
+                             bindValue="idnivel"
+                             placeholder="Nivel">
+                  </ng-select>
+                  <span class="help-block" *ngIf="FormModal.get('cntrlMantNivel').errors &&
+                  (FormModal.get('cntrlMantNivel').touched || FormModal.get('cntrlMantNivel').dirty)" >
+                    <span *ngIf="FormModal.get('cntrlMantNivel').errors.required">Ingrese Nivel</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-12">
+                <div class="form-group small" [ngClass]="{'has-error' : FormModal.get('cntrlMantDescPerfil').errors &&
+                (FormModal.get('cntrlMantDescPerfil').touched || FormModal.get('cntrlMantDescPerfil').dirty)}" >
+                  <mat-form-field floatLabel="never" appearance="outline" color="primary" class="w-100">
+                    <mat-label>DESCRIPCIÓN</mat-label>
+                    <input matInput type="text" formControlName="cntrlMantDescPerfil" class="text-uppercase" />
+                    <mat-hint align="end">
+                      <span class="help-block" *ngIf="FormModal.get('cntrlMantDescPerfil').errors &&
+                      (FormModal.get('cntrlMantDescPerfil').touched || FormModal.get('cntrlMantDescPerfil').dirty)" >
+                        <span *ngIf="FormModal.get('cntrlMantDescPerfil').errors.required">Campo requerido</span>
+                        <span *ngIf="FormModal.get('cntrlMantDescPerfil').errors.pattern">Solo se permiten letras</span>
+                      </span>
+                    </mat-hint>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" [disabled]="FormModal.invalid"
+         mat-raised-button color="warn" data-style="zoom-in" data-spinner-size="30">GRABAR <mat-icon>save</mat-icon></button>
+      </div>
+
+    </form>
+  </div>
+</aside>

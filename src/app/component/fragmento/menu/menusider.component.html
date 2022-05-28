@@ -1,0 +1,33 @@
+<nav class="page-sidebar">
+  <div class="sidebar-collapse">
+    <div class="admin-block d-flex">
+      <div>
+        <img src="../../../../assets/images/usuarios/img.jpg" width="45px" />
+      </div>
+      <div class="admin-info">
+        <div class="font-strong"> {{info.username}} </div><small> {{info.authorities}} </small></div>
+    </div>
+    <br><br>
+    <ul class="accordion-menu">
+      <li [class.active]="true">
+        <div class="menu" routerLink="/nivel">
+          nivel
+        </div>
+      </li>
+    </ul>
+    <ul class="accordion-menu">
+      <li [class.active]="true">
+        <div class="menu" routerLink="/perfil">
+          perfil
+        </div>
+      </li>
+    </ul>
+    <ul class="accordion-menu">
+      <li [class.active]="true">
+        <div class="menu" routerLink="/operacion">
+          operacion
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

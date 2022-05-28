@@ -1,0 +1,432 @@
+/******************************************************************************/
+/***** THEME LIGHT ************************************************************/
+/******************************************************************************/
+
+// https://material-ui.com/es/customization/color/
+
+// red
+$color1: #f44336;
+$color2: #ffebee;
+$color3: #ffcdd2;
+$color4: #ef9a9a;
+$color5: #e57373;
+$color6: #ef5350;
+$color7: #f44336;
+$color8: #e53935;
+$color9: #d32f2f;
+$color10: #c62828;
+$color11: #b71c1c;
+$color12: #ff8a80;
+$color13: #ff5252;
+$color14: #ff1744;
+$color15: #d50000;
+
+// pink
+$color16: #e91e63;
+$color17: #fce4ec;
+$color18: #f8bbd0;
+$color19: #f48fb1;
+$color20: #f06292;
+$color21: #ec407a;
+$color22: #e91e63;
+$color23: #d81b60;
+$color24: #c2185b;
+$color25: #ad1457;
+$color26: #880e4f;
+$color27: #ff80ab;
+$color28: #ff4081;
+$color29: #f50057;
+$color30: #c51162;
+
+// purple
+$color31: #9c27b0;
+$color32: #f3e5f5;
+$color33: #e1bee7;
+$color34: #ce93d8;
+$color35: #ba68c8;
+$color36: #ab47bc;
+$color37: #9c27b0;
+$color38: #8e24aa;
+$color39: #7b1fa2;
+$color40: #6a1b9a;
+$color41: #4a148c;
+$color42: #ea80fc;
+$color43: #e040fb;
+$color44: #d500f9;
+$color45: #aa00ff;
+
+// deepPurple
+$color46: #673ab7;
+$color47: #ede7f6;
+$color48: #d1c4e9;
+$color49: #b39ddb;
+$color50: #9575cd;
+$color51: #7e57c2;
+$color52: #673ab7;
+$color53: #5e35b1;
+$color54: #512da8;
+$color55: #4527a0;
+$color56: #311b92;
+$color57: #b388ff;
+$color58: #7c4dff;
+$color59: #651fff;
+$color60: #6200ea;
+
+// indigo
+$color61: #3f51b5;
+$color62: #e8eaf6;
+$color63: #c5cae9;
+$color64: #9fa8da;
+$color65: #7986cb;
+$color66: #5c6bc0;
+$color67: #3f51b5;
+$color68: #3949ab;
+$color69: #303f9f;
+$color70: #283593;
+$color71: #1a237e;
+$color72: #8c9eff;
+$color73: #536dfe;
+$color74: #3d5afe;
+$color75: #304ffe;
+
+// blue
+$color76: #2196f3;
+$color77: #e3f2fd;
+$color78: #bbdefb;
+$color79: #90caf9;
+$color80: #64b5f6;
+$color81: #42a5f5;
+$color82: #2196f3;
+$color83: #1e88e5;
+$color84: #1976d2;
+$color85: #1565c0;
+$color86: #0d47a1;
+$color87: #82b1ff;
+$color88: #448aff;
+$color89: #2979ff;
+$color90: #2962ff;
+
+// lightBlue
+$color91: #03a9f4;
+$color92: #e1f5fe;
+$color93: #b3e5fc;
+$color94: #81d4fa;
+$color95: #4fc3f7;
+$color96: #29b6f6;
+$color97: #03a9f4;
+$color98: #039be5;
+$color99: #0288d1;
+$color100: #0277bd;
+$color101: #01579b;
+$color102: #80d8ff;
+$color103: #40c4ff;
+$color104: #00b0ff;
+$color105: #0091ea;
+
+// cyan
+$color106: #00bcd4;
+$color107: #e0f7fa;
+$color108: #b2ebf2;
+$color109: #80deea;
+$color110: #4dd0e1;
+$color111: #26c6da;
+$color112: #00bcd4;
+$color113: #00acc1;
+$color114: #0097a7;
+$color115: #00838f;
+$color116: #006064;
+$color117: #84ffff;
+$color118: #18ffff;
+$color119: #00e5ff;
+$color120: #00b8d4;
+
+// teal
+$color121: #009688;
+$color122: #e0f2f1;
+$color123: #b2dfdb;
+$color124: #80cbc4;
+$color125: #4db6ac;
+$color126: #26a69a;
+$color127: #009688;
+$color128: #00897b;
+$color129: #00796b;
+$color130: #00695c;
+$color131: #004d40;
+$color132: #a7ffeb;
+$color133: #64ffda;
+$color134: #1de9b6;
+$color135: #00bfa5;
+
+// green
+$color136: #4caf50;
+$color137: #e8f5e9;
+$color138: #c8e6c9;
+$color139: #a5d6a7;
+$color140: #81c784;
+$color141: #66bb6a;
+$color142: #4caf50;
+$color143: #43a047;
+$color144: #43a047;
+$color145: #43a047;
+$color146: #1b5e20;
+$color147: #b9f6ca;
+$color148: #69f0ae;
+$color149: #00e676;
+$color150: #00c853;
+
+// lightGreen
+$color151: #8bc34a;
+$color152: #f1f8e9;
+$color153: #dcedc8;
+$color154: #c5e1a5;
+$color155: #aed581;
+$color156: #9ccc65;
+$color157: #8bc34a;
+$color158: #7cb342;
+$color159: #689f38;
+$color160: #558b2f;
+$color161: #33691e;
+$color162: #ccff90;
+$color163: #b2ff59;
+$color164: #76ff03;
+$color165: #64dd17;
+
+// lime
+$color166: #cddc39;
+$color167: #f9fbe7;
+$color168: #f0f4c3;
+$color169: #e6ee9c;
+$color170: #dce775;
+$color171: #d4e157;
+$color172: #cddc39;
+$color173: #c0ca33;
+$color174: #afb42b;
+$color175: #9e9d24;
+$color176: #827717;
+$color177: #f4ff81;
+$color178: #eeff41;
+$color179: #c6ff00;
+$color180: #aeea00;
+
+// yellow
+$color181: #ffeb3b;
+$color182: #fffde7;
+$color183: #fff9c4;
+$color184: #fff59d;
+$color185: #fff176;
+$color186: #ffee58;
+$color187: #ffeb3b;
+$color188: #fdd835;
+$color189: #fbc02d;
+$color190: #f9a825;
+$color191: #f57f17;
+$color192: #ffff8d;
+$color193: #ffff00;
+$color194: #ffea00;
+$color195: #ffd600;
+
+// amber
+$color196: #ffc107;
+$color197: #fff8e1;
+$color198: #ffecb3;
+$color199: #ffe082;
+$color200: #ffd54f;
+$color201: #ffca28;
+$color202: #ffc107;
+$color203: #ffb300;
+$color204: #ffa000;
+$color205: #ff8f00;
+$color206: #ff6f00;
+$color207: #ffe57f;
+$color208: #ffd740;
+$color209: #ffc400;
+$color210: #ffab00;
+
+// orange
+$color211: #ff9800;
+$color212: #fff3e0;
+$color213: #ffe0b2;
+$color214: #ffcc80;
+$color215: #ffb74d;
+$color216: #ffa726;
+$color217: #ff9800;
+$color218: #fb8c00;
+$color219: #f57c00;
+$color220: #ef6c00;
+$color221: #e65100;
+$color222: #ffd180;
+$color223: #ffab40;
+$color224: #ff9100;
+$color225: #ff6d00;
+
+// deepOrange
+$color226: #ff5722;
+$color227: #fbe9e7;
+$color228: #ffccbc;
+$color229: #ffab91;
+$color230: #ff8a65;
+$color231: #ff7043;
+$color232: #ff5722;
+$color233: #f4511e;
+$color234: #e64a19;
+$color235: #d84315;
+$color236: #bf360c;
+$color237: #ff9e80;
+$color238: #ff6e40;
+$color239: #ff3d00;
+$color240: #dd2c00;
+
+// brown
+$color241: #795548;
+$color242: #efebe9;
+$color243: #d7ccc8;
+$color244: #bcaaa4;
+$color245: #a1887f;
+$color246: #8d6e63;
+$color247: #795548;
+$color248: #6d4c41;
+$color249: #5d4037;
+$color250: #4e342e;
+$color251: #3e2723;
+
+// grey
+$color252: #9e9e9e;
+$color253: #fafafa;
+$color254: #f5f5f5;
+$color255: #eeeeee;
+$color256: #e0e0e0;
+$color257: #bdbdbd;
+$color258: #9e9e9e;
+$color259: #757575;
+$color260: #616161;
+$color261: #424242;
+$color262: #212121;
+
+// blueGrey
+$color263: #607d8b;
+$color264: #eceff1;
+$color265: #cfd8dc;
+$color266: #b0bec5;
+$color267: #90a4ae;
+$color268: #78909c;
+$color269: #607d8b;
+$color270: #546e7a;
+$color271: #455a64;
+$color272: #37474f;
+$color273: #263238;
+
+$color274: #FFFFFF;
+$color275: #000000;
+/******************************************************************************/
+/******************************************************************************/
+
+$transp1: rgba(240,79,9,0.9);
+
+
+/*Red - Orange*/
+$primary_color: #F44336;
+$dark_primary_color: #D32F2F;
+$light_primary_color: #FFCDD2;
+$accent_color: #FF9800;
+$primary_text: #212121;
+$secondary_text: #757575;
+$divider_color: #BDBDBD;
+$text_icons: #FFFFFF;
+
+/*Cian*/
+$cian_primary_color: #00BCD4;
+$cian_dark_primary_color: #0097A7;
+$cian_light_primary_color: #B2EBF2;
+$cian_accent_color: #00BCD4;
+$cian_primary_text: #212121;
+$cian_secondary_text: #757575;
+$cian_divider_color: #BDBDBD;
+$cian_text_icons: #FFFFFF;
+
+
+$color_white: #FFFFFF;
+$color_black: #000000;
+
+
+$wrap_menu_cabecera: #FFFFFF; //blanco
+$main_menu_cabecera: #FFFFFF; //blanco
+$hover_main_menu_cabecera: #03A9F4; //cian claro
+
+// $wrap_menu_header_fixed: rgba(214,10,0,0.9);
+$main_menu: #FFFFFF; //blanco
+$hover_main_menu: #b71c1c; //rojos
+
+$btn_show_sidebar_categorias: #b71c1c; //rojos
+$hover_show_sidebar_categorias: #FFFFFF; //blanco
+$fixed_btn_show_sidebar_categorias: #FFFFFF; //blanco
+$fixed_hover_btn_show_sidebar_categorias: #03A9F4; //cian claro
+
+$bg_sidebar_categorias: #b71c1c; //rojos
+$sider_menu_cate_mercado: #c62828; //rojos
+$sider_menu_cate_mercado_border: #d32f2f; //rojos
+
+$sider_menu_cate_mercado_font: #FFFFFF; //blanco
+$hover_sider_menu_cate_mercado_font: #03A9F4; //cian claro
+
+$sider_menu_cate_mercado_ul: #ffebee;
+
+// $bg0: #ffffff;
+// $color0_hov: #000000;
+// $hover_color0_hov: #d50000;
+
+@mixin degraded0 {
+  background: #ff3d00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ff3d00, #dd2c00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ff3d00, #dd2c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded1 {
+  background: #dd2c00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #dd2c00, #ff3d00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #dd2c00, #ff3d00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded2 {
+  background: #cddc39;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #cddc39, #827717);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #cddc39, #827717); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded3 {
+  background: #827717;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #827717, #cddc39);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #827717, #cddc39); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded4 {
+  background: #ff3d00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #dd2c00, #ff3d00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #dd2c00, #ff3d00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded5 {
+  background: #dd2c00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff3d00, #dd2c00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff3d00, #dd2c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded6 {
+  background: #827717 !important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #cddc39, #827717) !important;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #cddc39, #827717) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded_one {
+  background: #F7971E;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin degraded_two {
+  // background: #F00000;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to top, #b71c1c, #c62828);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to top, #b71c1c, #c62828); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #e52d27;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
